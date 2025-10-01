@@ -1,0 +1,85 @@
+/* src/components/About/About.css */
+
+.about-section .container {
+    max-width: 960px;
+}
+.about-section {
+    background-color: #ffffff; /* Warna latar belakang sedikit berbeda */
+    padding: 150px 0;
+}
+
+/* --- Styling Teks Kanan --- */
+.about-text h2 {
+    font-size: 1.8rem;
+}
+
+.about-text p {
+    text-align: justify;
+}
+
+.about-text .text-secondary {
+    line-height: 1.8;
+}
+
+/* --- Styling Kolom Gambar Kiri --- */
+.about-image-container {
+    position: relative; /* Kunci untuk menumpuk elemen */
+    max-width: 400px;
+    margin: auto; /* Agar di tengah saat mobile */
+}
+
+.workspace-image {
+    width: 100%;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* --- Styling & Animasi Teks Berputar --- */
+.rotating-text-container {
+    position: absolute; /* Ditumpuk di atas gambar */
+    right: -40px;
+    bottom: -30px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.center-emoji {
+    position: absolute;
+    font-size: 3rem;
+}
+
+/* Keyframes untuk Animasi Rotasi */
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* --- Penyesuaian Mobile (Mobile First!) --- */
+@media (max-width: 991.98px) {
+    .about-section {
+        padding: 50px 0;
+    }
+
+    .about-image-container {
+        margin-bottom: 50px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,137 @@
+/* 👇 RENCANA #1: Tambahkan Keyframes untuk Animasi Floating 👇 */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-section .container {
+    max-width: 960px;
+}
+
+.hero-section {
+    background-color: #ffffff;
+}
+
+/* --- Bingkai Foto Bulat Sempurna --- */
+.profile-image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+    padding: 10px;
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center top; 
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons .social-icon {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-icons .social-icon:hover {
+    color: #007bff;
+}
+
+.tech-stack-row {
+    padding-top: 40px;
+    border-top: 1px solid #e9ecef;
+    margin-top: 30px;
+}
+
+.tech-stack-row h4 {
+    line-height: 2;
+}
+
+.border-md-end { 
+    border-right: 2px solid #333;
+    padding-right: 20px;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin: 10px 20px;
+    transition: transform 0.3s;
+}
+
+.tech-icon:hover {
+    transform: scale(1.15);
+}
+
+/* Warna spesifik untuk setiap ikon */
+.html-icon  { color: #E34F26; }
+.css-icon   { color: #1572B6; }
+.js-icon    { color: #F7DF1E; }
+.react-icon { color: #61DAFB; }
+.laravel-icon { color: #FF2D20; }
+.mysql-icon { color: #4479A1; }
+.bootstrap-icon { color: #7952B3; }
+
+
+@media (max-width: 991.98px) {
+    .hero-section{
+        padding-top: 40px;
+    }
+    .border-md-end {
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .tech-stack-row h4 {
+        line-height: 1.5;
+    }
+
+    .tech-stack-row {
+        border-top: none;
+    }
+    
+    .profile-image-container {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 40px;
+    }
+
+    .tech-icon {
+        font-size: 2.5rem;
+        margin: 10px 12px;
+    }
+
+    .display-5 {
+        font-size: 2.2rem;
+    }
+}
