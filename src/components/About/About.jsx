@@ -5,7 +5,7 @@ import WorkspaceImage from "../../assets/workspace.jpg";
 const About = () => {
   return (
     <section id="about" className="about-section">
-      <div className="container container-narrow">
+      <div data-aos="fade-up" className="container container-narrow">
         <div className="row align-items-center">
           {/* Kolom Kiri: Gambar & Teks Berputar (akan kita isi nanti) */}
           <div className="col-lg-6 col-md-12">

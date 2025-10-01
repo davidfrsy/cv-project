@@ -18,7 +18,7 @@ const Hero = () => {
     <section id="home" className="hero-section">
       <div className="container container-narrow">
         <div className="row align-items-center" style={{ minHeight: "80vh" }}>
-          <div className="col-lg-6 col-md-12 order-lg-2 mt-5 mt-lg-0 d-flex justify-content-center align-items-center">
+          <div data-aos="fade-left" className="col-lg-6 col-md-12 order-lg-2 mt-5 mt-lg-0 d-flex justify-content-center align-items-center">
             <div className="profile-image-container">
               <img
                 src={ProfileImage}
@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
 
           {/* Kolom Kiri: Teks */}
-          <div className="col-lg-6 col-md-12 border-lg-1 text-center text-lg-start">
+          <div data-aos="fade-right" className="col-lg-6 col-md-12 border-lg-1 text-center text-lg-start">
             <h1 className="display-5 fw-bold">Front-End React Developer 👋</h1>
             <p className="my-4">
               Hi, I'm Muhammad David Firmansyah, a passionate Front-end React Developer based in Semarang. 📍
@@ -62,7 +62,7 @@ const Hero = () => {
         </div>
 
         {/* Bagian Tech Stack */}
-        <div className="row tech-stack-row">
+        <div data-aos="fade-up" className="row tech-stack-row">
           <div className="col-lg-2 col-md-12 border-md-end d-flex align-items-center justify-content-center justify-content-md-start">
             <h4 className="fw-bold text-center text-sm-start ">Tech Stack</h4>
           </div>

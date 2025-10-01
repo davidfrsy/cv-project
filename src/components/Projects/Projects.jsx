@@ -61,7 +61,12 @@ const Projects = () => {
         </div>
         <div className="projects-list">
           {projectsData.map((project, index) => (
-            <div className="project-card" key={index}>
+            <div 
+              className="project-card" 
+              key={index}
+              data-aos="fade-up" 
+              data-aos-delay={index * 100} 
+              >
               <div className="row">
                 <div className={`col-lg-6 col-md-12 ${index % 2 !== 0 ? 'order-lg-2' : ''}`}>
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
@@ -76,7 +81,7 @@ const Projects = () => {
                       {project.techStack.map((tech, i) => (
                         <span 
                           className="tech-badge" 
-                          key={i} 
+                          key={i}
                           style={{ backgroundColor: tech.color }}
                         >
                           {tech.icon} {tech.name}
