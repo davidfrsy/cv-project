@@ -34,19 +34,18 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* --- Styling & Animasi Teks Berputar --- */
-.rotating-text-container {
-    position: absolute; /* Ditumpuk di atas gambar */
-    right: -40px;
-    bottom: -30px;
-    width: 100px;
-    height: 100px;
+.center-emoji-container {
+    position: absolute;
+    bottom: -25px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
     background-color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .center-emoji {
@@ -73,6 +72,12 @@
 
     .about-image-container {
         margin-bottom: 50px;
+    }
+
+    .center-emoji-container {
+        top: 97%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Terapkan transform untuk menengahkan */
     }
 
     .about-text {

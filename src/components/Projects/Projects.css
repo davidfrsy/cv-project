@@ -1,7 +1,7 @@
 /* src/components/Projects/Projects.css */
 
 .projects-section .container {
-    max-width: 960;
+    max-width: 960px;
 }
 .projects-section {
     background-color: #ffffff;

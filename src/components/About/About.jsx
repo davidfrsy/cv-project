@@ -16,7 +16,7 @@ const About = () => {
                 alt="Workspace"
                 className="workspace-image"
               />
-              <div className="rotating-text-container">
+              <div className="center-emoji-container">
                 <span className="center-emoji">👨‍💻</span>
               </div>
             </div>

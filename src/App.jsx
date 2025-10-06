@@ -13,8 +13,8 @@ import "./App.css";
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Durasi animasi dalam milidetik
-      once: true,     // Animasi hanya berjalan sekali
+      duration: 1000,
+      once: true,     
     });
 
   }, []);
