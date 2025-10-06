@@ -30,9 +30,9 @@ const Hero = () => {
 
           {/* Kolom Kiri: Teks */}
           <div data-aos="fade-right" className="col-lg-6 col-md-12 border-lg-1 text-center text-lg-start">
-            <h1 className="display-5 fw-bold">Front-End React Developer 👋</h1>
+            <h1 className="display-5 fw-bold">Front-End Developer 👋</h1>
             <p className="my-4">
-              Hi, I'm Muhammad David Firmansyah, a passionate Front-end React Developer based in Semarang. 📍
+              Hi, I'm Muhammad David Firmansyah, a passionate Front-end Developer based in Semarang. 📍
             </p>
             <div className="social-icons mb-4">
               <a
