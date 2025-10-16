@@ -11,7 +11,7 @@ const Footer = () => {
             Copyright © 2025. All rights are reserved
           </p>
           <div className="footer-social-icons">
-            <a href="https://linkedin.com/in/mdavidfrsy" 
+            <a href="https://linkedin.com/in/davidfrsy" 
               target="_blank" 
               rel="noopener noreferrer">
               <FaLinkedin />
