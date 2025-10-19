@@ -52,8 +52,8 @@ const Hero = () => {
                 <FaGithub />
               </a>
               <a 
-                href="/David_Firmansyah_CV.pdf" 
-                download="David_Firmansyah_CV.pdf" 
+                href="/cv_muhammad_david_firmansyah.pdf" 
+                download="cv_muhammad_david_firmansyah.pdf" 
                 className="social-icon">
                 <FaFilePdf />
               </a>
