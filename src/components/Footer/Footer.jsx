@@ -25,7 +25,7 @@ const Footer = () => {
               download="cv_muhammad_david_firmansyah.pdf">
               <FaFilePdf />
             </a>
-          </div>
+          </div> 
         </div>
       </div>
     </footer>
