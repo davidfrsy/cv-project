@@ -11,7 +11,7 @@ import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss, SiReact, SiNodedotjs,
 import AppointmentImg from "../../assets/appointment-project.jpg";
 import FrozenFoodImg from "../../assets/frozenfood.jpg";
 import MoviesImg from "../../assets/movies-project.jpg"; 
-import MovienionImg from "../../assets/movienion.jpg"; 
+import MovienionImg from "../../assets/Movienion.jpg"; 
 
 // DATA PROYEK YANG SUDAH DIPERBARUI
 const projectsData = [
