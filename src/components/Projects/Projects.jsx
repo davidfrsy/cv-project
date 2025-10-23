@@ -5,12 +5,13 @@ import "./Projects.css";
 // Impor Ikon Baru
 import { FaGithub, FaReact, FaSass, FaBootstrap, FaCss3Alt } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss } from "react-icons/si";
+import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss, SiReact, SiNodedotjs, SiSupabase } from "react-icons/si";
 
 // Impor gambar proyek Anda
 import AppointmentImg from "../../assets/appointment-project.jpg";
 import FrozenFoodImg from "../../assets/frozenfood.jpg";
 import MoviesImg from "../../assets/movies-project.jpg"; 
+import MovienionImg from "../../assets/movienion.jpg"; 
 
 // DATA PROYEK YANG SUDAH DIPERBARUI
 const projectsData = [
@@ -52,10 +53,11 @@ const projectsData = [
     title: "Movienion",
     description: "A blog page where I share my opinions about movies I've watched.",
     techStack: [
-      { name: "Laravel", icon: <SiLaravel />, color: "#FF2D20" },
-      { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
+      { name: "React", icon: <SiReact />, color: "#61DAFB" },
+      { name: "NodeJS", icon: <SiNodedotjs />, color: "#3C873A" },
+      { name: "Supabase", icon: <SiSupabase />, color: "#3ECF8E" }
     ],
-    imageUrl: MoviesImg,
+    imageUrl: MovienionImg,
     liveLink: null,
     codeLink: null,
   },
