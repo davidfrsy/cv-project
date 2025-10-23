@@ -45,8 +45,19 @@ const projectsData = [
       { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
     ],
     imageUrl: MoviesImg,
-    liveLink: "https://davidfr.my.id",
+    liveLink: null,
     codeLink: "https://github.com/davidfrsy/duplix10-app",
+  },
+  {
+    title: "Movienion",
+    description: "A blog page where I share my opinions about movies I've watched.",
+    techStack: [
+      { name: "Laravel", icon: <SiLaravel />, color: "#FF2D20" },
+      { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
+    ],
+    imageUrl: MoviesImg,
+    liveLink: null,
+    codeLink: null,
   },
 ];
 
