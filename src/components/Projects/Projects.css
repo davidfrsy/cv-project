@@ -48,18 +48,24 @@
 }
 
 .tech-badge {
-    /* Hapus background-color abu-abu, karena sekarang dinamis */
-    color: #ffffff; /* Warna teks putih agar kontras */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Bayangan teks agar terbaca */
+    color: #ffffff; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
     padding: 8px 15px;
     border-radius: 8px;
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     
-    /* 👇 Tambahkan ini untuk menyejajarkan ikon dan teks 👇 */
     display: inline-flex;
     align-items: center;
     gap: 8px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  width: 100%; 
+  margin-top: 50px; 
 }
 
 .project-links a {
@@ -68,10 +74,24 @@
     font-weight: 600;
     margin-right: 20px;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .project-links a:hover {
     color: #007bff;
+}
+
+.link-disabled {
+  color: #999; 
+  font-weight: 600;
+  margin-right: 20px;
+  opacity: 0.7;
+  cursor: not-allowed; 
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; 
 }
 
 
@@ -81,13 +101,12 @@
         padding: 30px 0;
     }
     .project-card .row {
-        /* Memastikan gambar selalu di atas pada mode mobile */
         display: flex;
         flex-direction: column;
     }
 
     .project-card .col-lg-6 {
-        order: 0 !important; /* Reset order untuk mobile */
+        order: 0 !important; 
     }
 
     .project-description {
@@ -99,6 +118,7 @@
     }
 
     .project-links {
+        margin-top:20px;
         justify-content: center;
         display: flex;
     }

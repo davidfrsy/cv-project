@@ -33,8 +33,8 @@
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translate(5px, -5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-color: #007bff; 
 }
 
@@ -43,7 +43,6 @@
     transition: color 0.3s ease;
 }
 
-/* Tambahkan class warna spesifik */
 .email-icon { color: #D14836; }
 .linkedin-icon { color: #0A66C2; }
 .pdf-icon { color: #212529; }
@@ -56,7 +55,6 @@
     word-break: break-all;
 }
 
-/* --- Tampilan Mobile (Tombol) --- */
 @media (max-width: 768px) {
     .contact-section {
         padding: 30px 0;
@@ -66,10 +64,10 @@
         gap: 10px;
     }
     .contact-card {
-        width: 100%; /* Lebar penuh seperti tombol */
-        height: auto; /* Tinggi otomatis */
-        flex-direction: row; /* Konten disusun ke samping */
-        justify-content: flex-start; /* Mulai dari kiri */
+        width: 100%; 
+        height: auto; 
+        flex-direction: row; 
+        justify-content: flex-start; 
         padding: 1rem 1.5rem;
     }
 

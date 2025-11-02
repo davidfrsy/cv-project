@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'; 
-import './Projects.css';
-
-import { FaGithub, FaReact, FaSass, FaBootstrap, FaCss3Alt } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import "./Projects.css";
+import { FaGithub } from "react-icons/fa"; 
 import { FiExternalLink } from "react-icons/fi";
-import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss } from "react-icons/si";
-
-import { supabase } from '../../supabaseClient';
+import { supabase } from "../../supabaseClient";
+import { TECH_MAP } from '../../techConfig.jsx';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -16,14 +14,12 @@ const Projects = () => {
 
   async function getProjects() {
     try {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('*'); 
+      const { data, error } = await supabase.from("projects").select("*");
 
       if (error) {
         throw error;
       }
-      
+
       if (data) {
         setProjects(data);
       }
@@ -32,48 +28,39 @@ const Projects = () => {
     }
   }
 
-  const getTechIcon = (techName) => {
-    switch (techName.toLowerCase()) {
-      case 'react':
-        return <FaReact />;
-      case 'scss':
-        return <FaSass />;
-      case 'bootstrap':
-        return <FaBootstrap />;
-      case 'codeigniter':
-        return <SiCodeigniter />;
-      case 'css':
-        return <FaCss3Alt />;
-      case 'mysql':
-        return <SiMysql />;
-      case 'laravel':
-        return <SiLaravel />;
-      case 'tailwind':
-        return <SiTailwindcss />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <section id="projects" className="projects-section">
       <div className="container container-narrow">
         <div className="projects-header" data-aos="fade-up">
           <p className="text-primary fw-bold">PORTFOLIO</p>
-          <h2 className="fw-bold">Each project is a unique piece of development ✨</h2>
+          <h2 className="fw-bold">
+            Each project is a unique piece of development ✨
+          </h2>
         </div>
         <div className="projects-list">
           {projects.map((project, index) => (
-            <div 
-              className="project-card" 
+            <div
+              className="project-card"
               key={project.id}
-              data-aos="fade-up" 
+              data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <div className="row">
-                <div className={`col-lg-6 col-md-12 ${index % 2 !== 0 ? 'order-lg-2' : ''}`}>
-                  <a href={project.live_link} target="_blank" rel="noopener noreferrer">
-                    <img src={project.image_url} alt={project.title} className="project-image" />
+                <div
+                  className={`col-lg-6 col-md-12 ${
+                    index % 2 !== 0 ? "order-lg-2" : ""
+                  }`}
+                >
+                  <a
+                    href={project.live_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={project.image_url}
+                      alt={project.title}
+                      className="project-image"
+                    />
                   </a>
                 </div>
                 <div className="col-lg-6 col-md-12">
@@ -81,22 +68,50 @@ const Projects = () => {
                     <h4 className="fw-bold">{project.title}</h4>
                     <p className="text-secondary my-3">{project.description}</p>
                     <div className="tech-stack my-3">
-                      {project.tech_stack && project.tech_stack.map((tech, i) => (
-                        <span 
-                          className="tech-badge" 
-                          key={i} 
-                        >
-                          {getTechIcon(tech)} {tech}
-                        </span>
-                      ))}
+                      {project.tech_stack &&
+                        project.tech_stack.map((techName, i) => {
+                          const tech = TECH_MAP[techName];
+                          if (!tech) return null;
+
+                          return (
+                            <span
+                              className="tech-badge"
+                              key={i}
+                              style={{ backgroundColor: tech.color }}
+                            >
+                              {tech.icon} {tech.name}
+                            </span>
+                          );
+                        })}
                     </div>
                     <div className="project-links">
-                      <a href={project.code_link} target="_blank" rel="noopener noreferrer">
-                        Code <FaGithub />
-                      </a>
-                      <a href={project.live_link} target="_blank" rel="noopener noreferrer">
-                        Live Demo <FiExternalLink />
-                      </a>
+                      {project.is_private ? (
+                        <span className="link-disabled">
+                          Code (Private) <FaGithub />
+                        </span>
+                      ) : (
+                        <a
+                          href={project.code_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Code <FaGithub />
+                        </a>
+                      )}
+
+                      {project.live_link ? (
+                        <a
+                          href={project.live_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo <FiExternalLink />
+                        </a>
+                      ) : (
+                        <span className="link-disabled">
+                          Live Demo <FiExternalLink />
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
