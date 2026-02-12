@@ -54,6 +54,27 @@
     font-size: 1rem;
     word-break: break-all;
 }
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.animate-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-zoom {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.animate-zoom.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
 
 @media (max-width: 768px) {
     .contact-section {
@@ -73,6 +94,15 @@
 
     .contact-text {
         margin-top: 0;
-        margin-left: 20px; /* Jarak antara ikon dan teks */
+        margin-left: 20px; 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-zoom {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }

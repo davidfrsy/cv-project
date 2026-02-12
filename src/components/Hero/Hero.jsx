@@ -9,7 +9,7 @@ import {
   FaBootstrap,
   FaFilePdf,
 } from "react-icons/fa";
-import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss } from "react-icons/si";
+import { SiMysql, SiLaravel } from "react-icons/si";
 import ProfileImage from "../../assets/img-profile.jpg";
 import "./Hero.css";
 
