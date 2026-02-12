@@ -10,7 +10,7 @@ import {
   FaFilePdf,
 } from "react-icons/fa";
 import { SiCodeigniter, SiMysql, SiLaravel, SiTailwindcss } from "react-icons/si";
-import ProfileImage from "../../assets/profile-pict.jpg";
+import ProfileImage from "../../assets/img-profile.jpg";
 import "./Hero.css";
 
 const Hero = () => {
@@ -30,9 +30,10 @@ const Hero = () => {
 
           {/* Kolom Kiri: Teks */}
           <div data-aos="fade-right" className="col-lg-6 col-md-12 border-lg-1 text-center text-lg-start">
-            <h1 className="display-5 fw-bold">Front-End Developer 👋</h1>
-            <p className="my-4">
-              Hi, I'm Muhammad David Firmansyah, a passionate Front-end Developer based in Semarang. 📍
+            <h1 className="display-5 fw-bold">Web Developer 👋</h1>
+            <p className="">
+              Hi, I'm Muhammad David Firmansyah, a developer based in Semarang 📍. 
+              I love developing websites and playing with artistic ideas to make the web more expressive and fun.
             </p>
             <div className="social-icons mb-4">
               <a

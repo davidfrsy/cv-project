@@ -1,32 +1,51 @@
-import React, { useState, useEffect } from "react";
 import "./Projects.css";
-import { FaGithub } from "react-icons/fa"; 
-import { FiExternalLink } from "react-icons/fi";
-import { supabase } from "../../supabaseClient";
-import { TECH_MAP } from '../../techConfig.jsx';
+import movieImg from "../../assets/img-movie.jpg";
+import cllinicImg from "../../assets/img-clinic.jpg";
+import notesImg from "../../assets/img-notes.jpg";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    getProjects();
-  }, []);
-
-  async function getProjects() {
-    try {
-      const { data, error } = await supabase.from("projects").select("*");
-
-      if (error) {
-        throw error;
-      }
-
-      if (data) {
-        setProjects(data);
-      }
-    } catch (error) {
-      console.error("Error fetching projects:", error.message);
-    }
-  }
+  const projects = [
+    {
+      title: "Movienion",
+      desc: "Movie app with modern UI, auth/data powered by Supabase, deployed on Vercel.",
+      image: movieImg,
+      stack: [
+        { label: "React", cls: "bg-primary" },
+        { label: "Supabase", cls: "bg-success" },
+        { label: "Tailwind", cls: "bg-info" },
+      ],
+      links: [
+        { label: "Live Demo", href: "https://movienion.vercel.app/" },
+        { label: "Source Code", href: "https://github.com/davidfrsy/movienion-vercel" },
+      ],
+    },
+    {
+      title: "Sistem Poliklinik Sederhana",
+      desc: "Simple clinic management system built with CodeIgniter, MySQL, and Bootstrap UI.",
+      image: cllinicImg,
+      stack: [
+        { label: "CodeIgniter", cls: "bg-danger" },
+        { label: "Bootstrap", cls: "bg-info" },
+        { label: "MySQL", cls: "bg-warning" },
+      ],
+      links: [
+        { label: "Source Code", href: "https://github.com/davidfrsy/Sistem-Poliklinik-Sederhana" },
+      ],
+    },
+    {
+      title: "Web Notes",
+      desc: "Lightweight notes web app built with vanilla JavaScript, HTML, and CSS.",
+      image: notesImg,
+      stack: [
+        { label: "JavaScript", cls: "bg-warning" },
+        { label: "HTML", cls: "bg-danger" },
+        { label: "CSS", cls: "bg-primary" },
+      ],
+      links: [
+        { label: "Source Code", href: "https://github.com/davidfrsy/Web-Notes" },
+      ],
+    },
+  ];
 
   return (
     <section id="projects" className="projects-section">
@@ -37,87 +56,46 @@ const Projects = () => {
             Each project is a unique piece of development ✨
           </h2>
         </div>
+
         <div className="projects-list">
-          {projects.map((project, index) => (
-            <div
-              className="project-card"
-              key={project.id}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="row">
-                <div
-                  className={`col-lg-6 col-md-12 ${
-                    index % 2 !== 0 ? "order-lg-2" : ""
-                  }`}
-                >
-                  <a
-                    href={project.live_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+          {projects.map((p, idx) => {
+            const isEven = idx % 2 === 1; 
+            return (
+              <div className="project-card" data-aos="fade-up" key={p.title}>
+                <div className="row align-items-center">
+                  <div className={`col-lg-6 ${isEven ? "order-lg-2" : ""}`}>
                     <img
-                      src={project.image_url}
-                      alt={project.title}
+                      src={p.image}
+                      alt={p.title}
                       className="project-image"
+                      loading="lazy"
                     />
-                  </a>
-                </div>
-                <div className="col-lg-6 col-md-12">
-                  <div className="project-description text-center text-lg-start">
-                    <h4 className="fw-bold">{project.title}</h4>
-                    <p className="text-secondary my-3">{project.description}</p>
-                    <div className="tech-stack my-3">
-                      {project.tech_stack &&
-                        project.tech_stack.map((techName, i) => {
-                          const tech = TECH_MAP[techName];
-                          if (!tech) return null;
+                  </div>
 
-                          return (
-                            <span
-                              className="tech-badge"
-                              key={i}
-                              style={{ backgroundColor: tech.color }}
-                            >
-                              {tech.icon} {tech.name}
-                            </span>
-                          );
-                        })}
+                  <div className={`col-lg-6 project-description ${isEven ? "order-lg-1" : ""}`}>
+                    <h3 className="fw-bold mb-3">{p.title}</h3>
+                    <p className="mb-3">{p.desc}</p>
+
+                    <div className="tech-stack mt-3">
+                      {p.stack.map((s) => (
+                        <span key={s.label} className={`tech-badge ${s.cls}`}>
+                          {s.label}
+                        </span>
+                      ))}
                     </div>
-                    <div className="project-links">
-                      {project.is_private ? (
-                        <span className="link-disabled">
-                          Code (Private) <FaGithub />
-                        </span>
-                      ) : (
-                        <a
-                          href={project.code_link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Code <FaGithub />
-                        </a>
-                      )}
 
-                      {project.live_link ? (
-                        <a
-                          href={project.live_link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Live Demo <FiExternalLink />
+                    <div className="project-links">
+                      {p.links.map((l) => (
+                        <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                          {l.label}
                         </a>
-                      ) : (
-                        <span className="link-disabled">
-                          Live Demo <FiExternalLink />
-                        </span>
-                      )}
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
