@@ -19,29 +19,62 @@
     background-color: #ffffff;
 }
 
-/* --- Bingkai Foto Bulat Sempurna --- */
+/* CSS kamu tetap */
 .profile-image-container {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease-in-out;
-    padding: 10px;
-    animation: floatAnimation 4s ease-in-out infinite;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+  animation: floatAnimation 4s ease-in-out infinite;
+
+  /* tambahan penting untuk skeleton layer */
+  position: relative;
+  overflow: hidden; /* biar skeleton & image tetap rapi dalam lingkaran */
 }
 
 .profile-image-container:hover {
-    transform: scale(1.05);
-    animation-play-state: paused;
+  transform: scale(1.05);
+  animation-play-state: paused;
 }
 
 .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    object-position: center top; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center top;
+}
+
+/* ==== tambahan baru ==== */
+
+/* saat loading: sembunyikan gambar (tanpa merusak layout) */
+.profile-image.is-hidden {
+  opacity: 0;
+}
+
+/* skeleton layer ikut bentuk image (yang sudah bulat) */
+.skeleton-image {
+  position: absolute;
+  inset: 10px;          
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+/* kalau sudah load: skeleton hilang halus */
+.skeleton-image.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
 }
 
 .social-icons {
@@ -56,9 +89,11 @@
     margin-right: 20px;
     color: #333;
     transition: color 0.3s;
+    transition: transform 0.3s;
 }
 
 .social-icons .social-icon:hover {
+    transform: scale(1.15);
     color: #007bff;
 }
 
@@ -81,21 +116,14 @@
     font-size: 3rem;
     margin: 10px 20px;
     transition: transform 0.3s;
+    transition: color 0.3s;
+
 }
 
 .tech-icon:hover {
     transform: scale(1.15);
+    color: #007bff;
 }
-
-/* Warna spesifik untuk setiap ikon */
-.html-icon  { color: #E34F26; }
-.css-icon   { color: #1572B6; }
-.js-icon    { color: #F7DF1E; }
-.react-icon { color: #61DAFB; }
-.laravel-icon { color: #FF2D20; }
-.mysql-icon { color: #4479A1; }
-.bootstrap-icon { color: #7952B3; }
-
 
 @media (max-width: 991.98px) {
     .hero-section{

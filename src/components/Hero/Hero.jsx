@@ -10,7 +10,8 @@ import {
   FaFilePdf,
 } from "react-icons/fa";
 import { SiMysql, SiLaravel } from "react-icons/si";
-import ProfileImage from "../../assets/img-profile.jpg";
+import ProfileImage from "./ProfileImg.jsx";
+import ProfileImageSrc from "../../assets/img-profile.jpg";
 import "./Hero.css";
 
 const Hero = () => {
@@ -18,14 +19,11 @@ const Hero = () => {
     <section id="home" className="hero-section">
       <div className="container container-narrow">
         <div className="row align-items-center" style={{ minHeight: "80vh" }}>
-          <div data-aos="fade-left" className="col-lg-6 col-md-12 order-lg-2 mt-5 mt-lg-0 d-flex justify-content-center align-items-center">
-            <div className="profile-image-container">
-              <img
-                src={ProfileImage}
-                alt="Foto Profil"
-                className="profile-image"
-              />
-            </div>
+          <div
+            data-aos="fade-left"
+            className="col-lg-6 col-md-12 order-lg-2 mt-5 mt-lg-0 d-flex justify-content-center align-items-center"
+          >
+            <ProfileImage src={ProfileImageSrc} />
           </div>
 
           {/* Kolom Kiri: Teks */}
@@ -69,13 +67,13 @@ const Hero = () => {
           </div>
           <div className="col-lg-10 col-md-12">
             <div className="tech-icons d-flex justify-content-center justify-content-lg-start flex-wrap">
-              <FaHtml5 className="tech-icon html-icon" />
-              <FaCss3Alt className="tech-icon css-icon" />
-              <FaJsSquare className="tech-icon js-icon" />
-              <FaReact className="tech-icon react-icon" />
-              <SiLaravel className="tech-icon laravel-icon" />
-              <FaBootstrap className="tech-icon bootstrap-icon" />
-              <SiMysql className="tech-icon mysql-icon" />
+              <FaHtml5 className="tech-icon social-icon" />
+              <FaCss3Alt className="tech-icon social-icon" />
+              <FaJsSquare className="tech-icon social-icon" />
+              <FaReact className="tech-icon social-icon" />
+              <SiLaravel className="tech-icon social-icon" />
+              <FaBootstrap className="tech-icon social-icon" />
+              <SiMysql className="tech-icon social-icon" />
             </div>
           </div>
         </div>

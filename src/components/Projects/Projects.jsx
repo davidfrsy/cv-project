@@ -13,8 +13,8 @@ const Projects = () => {
       desc: "Movie app with modern UI, auth/data powered by Supabase, deployed on Vercel.",
       image: movieImg,
       stack: [
-        { label: "React", cls: "bg-primary" },
-        { label: "Supabase", cls: "bg-success" },
+        { label: "React", cls: "bg-info" },
+        { label: "Supabase", cls: "bg-info" },
         { label: "Tailwind", cls: "bg-info" },
       ],
       links: [
@@ -27,9 +27,9 @@ const Projects = () => {
       desc: "Simple clinic management system built with CodeIgniter, MySQL, and Bootstrap UI.",
       image: cllinicImg,
       stack: [
-        { label: "CodeIgniter", cls: "bg-danger" },
+        { label: "CodeIgniter", cls: "bg-info" },
         { label: "Bootstrap", cls: "bg-info" },
-        { label: "MySQL", cls: "bg-warning" },
+        { label: "MySQL", cls: "bg-info" },
       ],
       links: [
         { label: "Source Code", href: "https://github.com/davidfrsy/Sistem-Poliklinik-Sederhana" },
@@ -40,9 +40,9 @@ const Projects = () => {
       desc: "Lightweight notes web app built with vanilla JavaScript, HTML, and CSS.",
       image: notesImg,
       stack: [
-        { label: "JavaScript", cls: "bg-warning" },
-        { label: "HTML", cls: "bg-danger" },
-        { label: "CSS", cls: "bg-primary" },
+        { label: "JavaScript", cls: "bg-info" },
+        { label: "HTML", cls: "bg-info" },
+        { label: "CSS", cls: "bg-info" },
       ],
       links: [
         { label: "Source Code", href: "https://github.com/davidfrsy/Web-Notes" },
@@ -75,7 +75,7 @@ const Projects = () => {
       <div className="container container-narrow">
         {/* header juga bisa animasi kalau mau */}
         <div className="projects-header">
-          <p className="text-primary fw-bold">PORTFOLIO</p>
+          <h3 className="text-primary fw-bold">PORTFOLIO</h3>
           <h2 className="fw-bold">Each project is a unique piece of development ✨</h2>
         </div>
 
@@ -90,7 +90,7 @@ const Projects = () => {
                 className="project-card project-animate"
                 data-direction={direction}
                 ref={(el) => (cardsRef.current[idx] = el)}
-                style={{ transitionDelay: `${idx * 90}ms` }} // optional: stagger
+                style={{ transitionDelay: `${idx * 90}ms` }} 
               >
                 <div className="row align-items-center">
                   <div className={`col-lg-6 ${isEven ? "order-lg-2" : ""}`}>

@@ -43,8 +43,8 @@
     transition: color 0.3s ease;
 }
 
-.email-icon { color: #D14836; }
-.linkedin-icon { color: #0A66C2; }
+.email-icon { color: #212529; }
+.linkedin-icon { color: #212529; }
 .pdf-icon { color: #212529; }
 
 .contact-text {
