@@ -23,7 +23,7 @@ const Projects = () => {
       ],
     },
     {
-      title: "Sistem Poliklinik Sederhana",
+      title: "Simple Outpatient Clinic System",
       desc: "Simple clinic management system built with CodeIgniter, MySQL, and Bootstrap UI.",
       image: cllinicImg,
       stack: [

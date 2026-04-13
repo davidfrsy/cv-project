@@ -1,0 +1,129 @@
+.experience-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.experience-container {
+    max-width: 960px;
+}
+
+.experience-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.experience-header h2 {
+    color: #111111;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.experience-card {
+    background-color: #ffffff;
+    border: 1px solid #dbe7ff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.experience-card.active {
+    border-color: #0d6efd;
+    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.12);
+}
+
+.experience-top {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+}
+
+.experience-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.experience-info small {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: #0d6efd;
+}
+
+.experience-icon {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0d6efd;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.experience-icon.open {
+    transform: rotate(45deg);
+}
+
+.experience-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1.75rem;
+}
+
+.experience-content.open {
+    max-height: 250px;
+    padding: 0 1.75rem 1.5rem;
+}
+
+.experience-content ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.experience-content li {
+    color: #222222;
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+.experience-content li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .experience-section {
+        padding: 40px 0;
+    }
+
+    .experience-top {
+        padding: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .experience-info h3 {
+        font-size: 1.05rem;
+    }
+
+    .experience-info small {
+        font-size: 0.85rem;
+    }
+
+    .experience-content.open {
+        padding: 0 1.25rem 1.25rem;
+    }
+
+    .experience-content {
+        padding: 0 1.25rem;
+    }
+}
